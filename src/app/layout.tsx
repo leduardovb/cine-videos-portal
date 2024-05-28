@@ -1,7 +1,8 @@
-import '@/styles/globals.css'
+import '@/presentation/styles/globals.css'
 import { Inter as FontSans } from 'next/font/google'
 
 import { cn } from '@/lib/utils'
+import { GlobalProvider } from '@/main/providers'
 
 const fontSans = FontSans({
   subsets: ['latin'],
@@ -18,7 +19,7 @@ export default function RootLayout({ children }: React.PropsWithChildren) {
           fontSans.variable
         )}
       >
-        {children}
+        <GlobalProvider>{children}</GlobalProvider>
       </body>
     </html>
   )

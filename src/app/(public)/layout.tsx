@@ -1,4 +1,4 @@
-import { Card } from '@/components/ui/card'
+import { Card } from '@/presentation/components/ui/card'
 import React from 'react'
 
 export default function PublicLayout({ children }: React.PropsWithChildren) {

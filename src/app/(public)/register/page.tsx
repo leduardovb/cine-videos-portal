@@ -1,87 +1,97 @@
-import { Button } from '@/components/ui/button'
-import { DatePicker } from '@/components/ui/date-picker'
-import { Input } from '@/components/ui/input'
-import { Label } from '@/components/ui/label'
+import { RegisterFactory } from '@/main/factories/pages'
+import {
+  FormButton,
+  FormDatePicker,
+  FormError,
+  FormInput,
+} from '@/presentation/components/form'
+import { Label } from '@/presentation/components/ui/label'
 import Link from 'next/link'
 
 export default function RegisterPage() {
   return (
     <div>
-      <h3 className="text-lg font-bold mb-4">Informações pessoais</h3>
-      <section>
-        <div>
-          <Label htmlFor="name">Nome</Label>
-          <Input
-            id="name"
-            name="name"
-            placeholder="Informe seu nome"
-            aria-label="Informe seu nome"
-            aria-required="true"
-          />
-        </div>
-        <div className="mt-4">
-          <Label htmlFor="last-name">Sobrenome</Label>
-          <Input
-            id="last-name"
-            name="last-name"
-            placeholder="Informe seu sobrenome"
-            aria-label="Informe seu sobrenome"
-            aria-required="true"
-          />
-        </div>
-        <div className="mt-4">
-          <Label htmlFor="birthday">Data de nascimento</Label>
-          <DatePicker
-            id="birthday"
-            name="birthday"
-            placeholder="Informe sua data de nascimento"
-            aria-label="Informe sua data de nascimento"
-            aria-required="true"
-          />
-        </div>
-      </section>
+      <RegisterFactory>
+        <h3 className="text-lg font-bold mb-4">Informações pessoais</h3>
+        <section>
+          <div className="relative">
+            <Label htmlFor="name">Nome</Label>
+            <FormInput
+              id="name"
+              name="name"
+              placeholder="Informe seu nome"
+              aria-label="Informe seu nome"
+              aria-required="true"
+            />
+            <FormError name="name" />
+          </div>
+          <div className="relative mt-4">
+            <Label htmlFor="lastName">Sobrenome</Label>
+            <FormInput
+              id="lastName"
+              name="lastName"
+              placeholder="Informe seu sobrenome"
+              aria-label="Informe seu sobrenome"
+              aria-required="true"
+            />
+            <FormError name="lastName" />
+          </div>
+          <div className="relative mt-4">
+            <Label htmlFor="birthDate">Data de nascimento</Label>
+            <FormDatePicker
+              id="birthDate"
+              name="birthDate"
+              placeholder="Informe sua data de nascimento"
+            />
+            <FormError name="birthDate" />
+          </div>
+        </section>
 
-      <h3 className="text-lg font-bold mt-8 mb-4">Informações da conta</h3>
-      <section>
-        <div>
-          <Label htmlFor="email">Email</Label>
-          <Input
-            id="email"
-            name="email"
-            type="email"
-            placeholder="Informe seu e-mail"
-            aria-label="Informe seu e-mail"
-            aria-required="true"
-          />
-        </div>
-        <div className="mt-4">
-          <Label htmlFor="password">Senha</Label>
-          <Input
-            id="password"
-            name="password"
-            type="password"
-            placeholder="Informe sua senha"
-            aria-label="Informe sua senha"
-            aria-required="true"
-          />
-        </div>
+        <h3 className="text-lg font-bold mt-8 mb-4">Informações da conta</h3>
+        <section>
+          <div className="relative">
+            <Label htmlFor="email">Email</Label>
+            <FormInput
+              id="email"
+              name="email"
+              type="email"
+              placeholder="Informe seu e-mail"
+              aria-label="Informe seu e-mail"
+              aria-required="true"
+            />
+            <FormError name="email" />
+          </div>
+          <div className="relative mt-4">
+            <Label htmlFor="password">Senha</Label>
+            <FormInput
+              id="password"
+              name="password"
+              type="password"
+              placeholder="Informe sua senha"
+              aria-label="Informe sua senha"
+              aria-required="true"
+            />
+            <FormError name="password" />
+          </div>
 
-        <div className="mt-4">
-          <Label htmlFor="confirm-password">Confirmar senha</Label>
-          <Input
-            id="confirm-password"
-            name="confirm-password"
-            type="password"
-            placeholder="Confirme sua senha"
-            aria-label="Confirme sua senha"
-            aria-required="true"
-          />
-        </div>
-      </section>
+          <div className="relative mt-4">
+            <Label htmlFor="confirmPassword">Confirmar senha</Label>
+            <FormInput
+              id="confirmPassword"
+              name="confirmPassword"
+              type="password"
+              placeholder="Confirme sua senha"
+              aria-label="Confirme sua senha"
+              aria-required="true"
+            />
+            <FormError name="confirmPassword" />
+          </div>
+        </section>
 
-      <div className="mt-12">
-        <Button className="h-10 w-full">Cadastrar</Button>
-      </div>
+        <div className="mt-12">
+          <FormButton className="h-10 w-full">Cadastrar</FormButton>
+        </div>
+      </RegisterFactory>
 
       <div className="mt-4 text-sm">
         <span>Já tem uma conta?</span>

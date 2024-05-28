@@ -1,4 +1,8 @@
-import { CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import {
+  CardContent,
+  CardHeader,
+  CardTitle,
+} from '@/presentation/components/ui/card'
 
 export default function RegisterLayout({ children }: React.PropsWithChildren) {
   return (

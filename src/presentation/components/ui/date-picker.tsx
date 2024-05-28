@@ -4,13 +4,13 @@ import * as React from 'react'
 import { format } from 'date-fns'
 
 import { cn } from '@/lib/utils'
-import { Button } from '@/components/ui/button'
-import { Calendar } from '@/components/ui/calendar'
+import { Button } from '@/presentation/components/ui/button'
+import { Calendar } from '@/presentation/components/ui/calendar'
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from '@/components/ui/popover'
+} from '@/presentation/components/ui/popover'
 
 interface DatePickerProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {

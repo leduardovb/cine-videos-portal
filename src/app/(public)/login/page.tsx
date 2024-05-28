@@ -1,32 +1,42 @@
-import { FacebookIcon } from '@/assets/icons'
-import { Button } from '@/components/ui/button'
-import { Input } from '@/components/ui/input'
-import { Label } from '@/components/ui/label'
+import { LoginFactory } from '@/main/factories/pages'
+import { FacebookIcon } from '@/presentation/assets/icons'
+import {
+  FormButton,
+  FormError,
+  FormInput,
+} from '@/presentation/components/form'
+import { Button } from '@/presentation/components/ui/button'
+import { Label } from '@/presentation/components/ui/label'
 import Link from 'next/link'
 
 export default function LoginPage() {
   return (
     <div>
-      <div>
-        <Label htmlFor="email">Email</Label>
-        <Input
-          id="email"
-          name="email"
-          type="email"
-          placeholder="Informe seu e-mail"
-        />
-      </div>
-      <div className="mt-4">
-        <Label htmlFor="password">Senha</Label>
-        <Input
-          id="password"
-          name="password"
-          type="password"
-          placeholder="Informe sua senha"
-        />
-      </div>
+      <LoginFactory>
+        <div className="relative">
+          <Label htmlFor="email">Email</Label>
+          <FormInput
+            id="email"
+            name="email"
+            type="email"
+            placeholder="Informe seu e-mail"
+          />
+          <FormError name="email" />
+        </div>
+        <div className="relative mt-4">
+          <Label htmlFor="password">Senha</Label>
+          <FormInput
+            id="password"
+            name="password"
+            type="password"
+            placeholder="Informe sua senha"
+          />
+          <FormError name="password" />
+        </div>
 
-      <Button className="h-10 mt-8 w-full">Login</Button>
+        <FormButton className="h-10 mt-8 w-full">Login</FormButton>
+      </LoginFactory>
+
       <p className="text-sm text-center my-2">ou</p>
       <Button className="h-10 w-full" variant="secondary">
         <FacebookIcon className="w-5 h-5 mr-2" />

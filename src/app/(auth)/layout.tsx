@@ -1,4 +1,4 @@
-import { Header } from '@/components/header'
+import { Header } from '@/presentation/components/header'
 
 export default function AuthLayout({ children }: React.PropsWithChildren) {
   return (
